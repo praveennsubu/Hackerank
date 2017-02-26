@@ -15,12 +15,34 @@ import scala.collection.mutable.ListBuffer
  * The next 'N' lines each contain a string.
  * The N+2nd line contains 'Q', the number of queries.
  * The following 'Q' lines each contain a query string.
- * 
+ *
  * Constraints
- * 
+ *
  * 1 <= N <= 1000
  * 1 <= Q <= 1000
  * 1 <= length of any string <= 20
+ *
+ * Sample Input
+ *
+ * 4
+ * aba
+ * baba
+ * aba
+ * xzxb
+ * 3
+ * aba
+ * xzxb
+ * ab
+ *
+ * Sample Output
+ *
+ * 2
+ * 1
+ * 0
+ *
+ * Explanation
+ *
+ * Here, "aba" occurs twice, in the first and third string. The string "xzxb" occurs once in the fourth string, and "ab" does not occur at all.
  *
  *  @see <a href="https://www.hackerrank.com/challenges/sparse-arrays?h_r=internal-search">Hackkerrank.com</a>
  *
