@@ -26,7 +26,7 @@ import scala.collection.mutable.ListBuffer
  *
  * @author Praveen
  */
-object SpareArray {
+object SparseArray {
   def main(args: Array[String]): Unit = {
     val numberOfStrings = readLine().toInt
     val strings = List.fill(numberOfStrings) { readLine() }
