@@ -21,6 +21,8 @@ import scala.io.StdIn.readLine
  * Print two space-seperated integers describing the respective numbers of times her best (highest) score 
  * increased and her worst (lowest) score decreased.
  *
+ * @see <a href="https://www.hackerrank.com/contests/university-codesprint-2/challenges/breaking-best-and-worst-records">Hackkerrank.com</a>
+ * 
  * @author Praveen
  */
 object BasketballGame {
