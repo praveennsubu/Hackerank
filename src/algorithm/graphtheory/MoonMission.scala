@@ -44,11 +44,11 @@ object MoonMission {
         val secondRoot = findRoot(second)
 
         if (ranks(first) < ranks(second)) {
-          updateAstronautRoots(firstRoot, secondRoot).copyToArray(astronauts)
+          updateAstronautRoots(firstRoot, secondRoot)
         } else if (ranks(first) > ranks(second)) {
-          updateAstronautRoots(secondRoot, firstRoot).copyToArray(astronauts)
+          updateAstronautRoots(secondRoot, firstRoot)
         } else {
-          updateAstronautRoots(secondRoot, firstRoot).copyToArray(astronauts)
+          updateAstronautRoots(secondRoot, firstRoot)
           ranks(second) = ranks(second) + 1
         }
       }
@@ -66,9 +66,10 @@ object MoonMission {
       //Update the root of a graph with a new parent of the entire graph.
       //This is synonymous to pointing the root of a graph to the root of another graph,
       //(which now becomes the parent of the entire graph)
-      //Uses Scala match to replace oldRoot value with the newRoot
       def updateAstronautRoots(oldRoot: Int, newRoot: Int) = {
-        astronauts.map[Int, Array[Int]] { case `oldRoot` => newRoot; case x => x }
+        astronauts.foreach{ x =>
+          if(x == oldRoot) astronauts(x) = newRoot
+        }
       }
     }
     
