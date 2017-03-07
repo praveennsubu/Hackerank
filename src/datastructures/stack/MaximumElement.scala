@@ -3,6 +3,9 @@ package datastructures.stack
 import scala.collection.mutable.ListBuffer
 import scala.io.StdIn.readLine
 
+/**
+See problem statement <a href="https://www.hackerrank.com/challenges/maximum-element">here</a>
+*/
 
 object MaximumElement {
   def main(args : Array[String]) : Unit = {
