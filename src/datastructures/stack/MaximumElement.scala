@@ -4,7 +4,7 @@ import scala.collection.mutable.ListBuffer
 import scala.io.StdIn.readLine
 
 /**
- * See <a href="https://www.hackerrank.com/challenges/maximum-element">Here</a> for problem statement
+* See problem statement <a href="https://www.hackerrank.com/challenges/maximum-element">here</a>
  * 
  * @author Praveen S
  * 
