@@ -3,15 +3,18 @@ package datastructures.stack
 import scala.collection.mutable.ListBuffer
 import scala.io.StdIn.readLine
 
-
+/**
+ * See <a href="https://www.hackerrank.com/challenges/maximum-element">Here</a> for problem statement
+ * 
+ * @author Praveen S
+ * 
+ * */
 object MaximumElement {
   def main(args : Array[String]) : Unit = {
     val noOfInputs = readLine().toInt
     val stack = ListBuffer.empty[Int]
     val maxElem = ListBuffer(0)
     val inputs = Array.fill(noOfInputs){ readLine().split(" ").map(_.toInt) }
-    
-    //var maxElem = 1
     
     inputs.foreach{ x =>
       val option = x(0)
