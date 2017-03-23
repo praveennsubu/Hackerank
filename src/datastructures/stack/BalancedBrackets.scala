@@ -17,42 +17,21 @@ object BalancedBrackets {
     val openingBraces = Array('(', '[', '{')
 
     inputs.foreach { input => //iterating through inputs
-      val stack = ListBuffer.empty[Char]
-      val result = checkBalancedBracket(input, 0)
-      if (result) println("YES")
-      else println("NO")
+      println(isBalancedBracket(input))
     }
-
-    def checkBalancedBracket(input: String, index: Int): Boolean = {
+    
+    def isBalancedBracket(input: String) : String = {
       val stack = ListBuffer.empty[Char]
-
-      @tailrec
-      def check(index: Int): Boolean = {
-        if (index < input.length) {
-          val char = input(index)
-          if (closingBraces.contains(char) && isBalancedBracket(char)) { //if the current char is a closing brace
-            stack.remove(0)
-            check(index + 1)
-          } else if (openingBraces.contains(char)) { //if opening brace, push them to stack
-            char +=: stack
-            check(index + 1)
-          } else false //braces don't match
-        } else if (index == input.length() && !stack.isEmpty) false //string finished, but stack not empty. not balanced
-        else true //entire string read. no errors. braces match
+      for(char <- input) {
+        if(openingBraces.contains(char)) char +=: stack
+        else {
+          if(stack.isEmpty) return "NO"
+          val head = stack.head
+          stack.remove(0)
+          if(closingBraces.indexOf(char) != openingBraces.indexOf(head)) return "NO"
+        }
       }
-           
-      def isBalancedBracket(closingBrace: Char): Boolean = {
-        if (stack.length == 0) false
-        else if (openingBraces.indexOf(stack.head) == closingBraces.indexOf(closingBrace)) //braces match
-          true
-        else false
-      }
-
-      return check(0)
-    }
-
-    def isBalancedBracket(closingBrace: Char): Boolean = {
-      true
+      if(stack.isEmpty) "YES" else "NO"
     }
 
   }
