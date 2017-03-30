@@ -43,7 +43,6 @@ object MergingCommunities {
           persons(secondRoot) = firstRoot
           ranks(firstRoot) = ranks(secondRoot) + ranks(firstRoot)
         } else {
-          
           persons(secondRoot) = firstRoot
           ranks(firstRoot) = ranks(secondRoot) + 1
         }
